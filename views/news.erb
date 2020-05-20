@@ -18,13 +18,53 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <title>News By Joe</title>
   </head>
   <body>
 
+<div class="container mt-5">
+<h1>News by Joe</h1>    
+    <h2>  Headlines From Today </h2> 
+    <p> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </p>
+     <hr class="my-4">
+        <% for article in @todaysnews %>
+                        <h4> <b> <%= article["title"] %> </b></h4>
+                        <h3> <%= article["description"] %> </h3>
+                        <h5> <a href=<%= article["url"] %> > Read This Article </a> </h5> 
+                <hr class="my-4">
+                <% end %>
+                </div>
+
     <div class="container mt-5">
-      <h1>News</h1>
+      <h1>Weather</h1>
+      <h2>A Summary of Current and Upcoming Weather in Your Area</h2>
+      <p> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </p>
+      <hr class="my-4">
+      <% for first in @days %>
+        <div class="col-sm-6">
+            <%= first%>
+            </div> 
+            <% end %>
+       <hr class="my-4">
+       <% for second in @days2 %>
+        <div class="col-sm-6">
+            <%= second%>
+            </div> 
+            <% end %>
+       <hr class="my-4">
+      <% for weather in @fiveday %>
+        <div class="col-sm-6">
+            <%= weather%>
+            </div> 
+            <hr class="my-4">
+
+ <% end %>
+
+<a href="/" class="btn btn-success">Refresh Page</a>
+
     </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
